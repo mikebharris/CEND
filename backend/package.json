@@ -1,7 +1,7 @@
 {
-  "name": "ebams",
+  "name": "DENC",
   "version": "1.0.0",
-  "description": "BAMS on Nodejs on Docker",
+  "description": "Docker-Express-Node-COBOL",
   "author": "Mike Harris <mike@mbharris.co.uk>",
   "main": "server.js",
   "scripts": {

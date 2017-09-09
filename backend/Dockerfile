@@ -11,9 +11,10 @@ WORKDIR node-v6.11.2-linux-x64
 RUN cp -dpR . /usr
 WORKDIR ...
 RUN rm -rf node-v6.11.2-linux-x64
-WORKDIR /usr/src/ebams
+WORKDIR /usr/src/denc
 COPY package.json .
 RUN npm install
 COPY server.js .
-COPY ebams.cbl .
+COPY test-backend.cbl .
+COPY HTTPRequestMethods.cpy .
 CMD [ "npm", "start" ]

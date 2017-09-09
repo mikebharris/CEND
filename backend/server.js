@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 var Cobol = require("cobol");
-var eBamsProgram = __dirname + "/ebams.cbl";
+var DENCBackend = __dirname + "/test-backend.cbl";
 var returnValue;
 
 app.get('/', (req, res) => {
@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/attendee/:attendeeId', (req, res) => {
-    Cobol(eBamsProgram, {
-        args: ["get", req.params.attendeeId],
+    Cobol(DENCBackend, {
+        args: ["GET", req.params.attendeeId],
         free: true,
     }, function (err, data) {
         returnValue = data;
@@ -28,8 +28,8 @@ app.get('/attendee/:attendeeId', (req, res) => {
 });
 
 app.post('/attendee', (req, res) => {
-    Cobol(eBamsProgram, {
-        args: ["post", req.query.name, req.query.email],
+    Cobol(DENCBackend, {
+        args: ["POST", req.query.name, req.query.email],
         free: true,
     }, function (err, data) {
         returnValue = data;
